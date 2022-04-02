@@ -29,7 +29,7 @@ CurrencyConversionBean response=responseEntity.getBody();
 return new CurrencyConversionBean(response.getId(), from, to, response.getConversionMultiple(), quantity, quantity.multiply(response.getConversionMultiple()), response.getPort());
 }
 //mapping for currency-converter-feign service
-@GetMapping("/currency-converter-feign/from/{from}/to/{to}/quantity/{quantity}") //where {from} and {to} represents the column 
+@GetMapping("/conversion/from/{from}/to/{to}/quantity/{quantity}") //where {from} and {to} represents the column
 //returns a bean 
 public CurrencyConversionBean convertCurrencyFeign(@PathVariable String from, @PathVariable String to, @PathVariable BigDecimal quantity)
 {
